@@ -1,18 +1,18 @@
-# Módulo NBioBSP Python
+# NBioBSP Module for Python
 
-Módulo para utilização do leitor biométrico Nitgen Hamster III em Python. Faça a instalação do driver que está no diretório driver(64 bits, mas existe 32 bits na Internet também).
+Digital fingerprint reader module for Python using Nitgen device.
+Install the driver that is the "driver" directory.
 
 ```bash
-git clone https://github.com/izepa/python-nbiobsp-module.git
-cd python-nbiobsp-module
+git clone https://github.com/paulopinda/python-nbiobsp.git
+cd python-nbiobsp
 python setup.py build
 python setup.py install
 ```
-#### Código para testar o módulo.
+#### Simple code
 
 ```python
-
-import time 
+import time
 import pynbiobsp as pnbio
 pnbio.init()
 
@@ -30,5 +30,10 @@ else:
     print('Digitais não correspondem.')
 
 pnbio.close()
-
 ```
+
+PS: Need change BOOSTPYTHON_VERSION in the setup.py to your version Python.
+
+#### Any problem? Report me, please.
+### Paulo Roberto
+paulo.pinda@gmail.com
