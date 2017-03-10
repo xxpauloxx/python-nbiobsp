@@ -22,7 +22,7 @@ setup(name="pynbiobsp",
       description = 'Fingerprint module for nitgen hamster',
       author = 'Paulo R. Silva',
       author_email = 'paulo.pinda@gmail.com',
-      url = 'https://www.github.com/izepa/python-nbiobsp-module',
+      url = 'https://github.com/paulopinda/python-nbiobsp/',
   	  ext_modules=[
   	       Extension("pynbiobsp", ["pynbiobsp.cpp"],
   	       libraries = [BOOSTPYTHON_VERSION, 'NBioBSP'])
