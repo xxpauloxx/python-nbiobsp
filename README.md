@@ -34,6 +34,3 @@ pnbio.close()
 
 PS: Need change BOOSTPYTHON_VERSION in the setup.py to your version Python.
 
-#### Any problem? Report me, please.
-### Paulo Roberto
-paulo.pinda@gmail.com
