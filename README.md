@@ -3,15 +3,18 @@
 Digital fingerprint reader module for Python using Nitgen device.
 Install the driver that is the "driver" directory.
 
-# Acknowledgments
+## Acknowledgments
 
-Agradeço a [Fingertech](www.fingertech.com.br) por todo apoio, suporte e investimento, 
+
+Agradeço a [Fingertech](http://www.fingertech.com.br) por todo apoio, suporte e investimento, 
 sem essa parceria não seria possível manter esse projeto.
+<br />
 
-
-Thanks to [Fingertech] (www.fingertech.com.br) for all support and investment,
+Thanks to [Fingertech] (http://www.fingertech.com.br) for all support and investment,
 without this partnership it would not be possible to maintain this project.
 
+
+### Install Python module
 
 ```bash
 
