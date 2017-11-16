@@ -15,7 +15,7 @@ def _init_posix():
 distutils.sysconfig._init_posix = _init_posix
 
 
-BOOSTPYTHON_VERSION = 'boost_python-py34'
+BOOSTPYTHON_VERSION = 'boost_python-py35'
 
 setup(name="pynbiobsp",
       version = '0.1',

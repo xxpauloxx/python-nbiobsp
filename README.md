@@ -3,13 +3,27 @@
 Digital fingerprint reader module for Python using Nitgen device.
 Install the driver that is the "driver" directory.
 
+# Acknowledgments
+
+Agradeço a [Fingertech](www.fingertech.com.br) por todo apoio, suporte e investimento, 
+sem essa parceria não seria possível manter esse projeto.
+
+
+Thanks to [Fingertech] (www.fingertech.com.br) for all support and investment,
+without this partnership it would not be possible to maintain this project.
+
+
 ```bash
+
 git clone https://github.com/paulopinda/python-nbiobsp.git
 cd python-nbiobsp
 python setup.py build
 python setup.py install
+
 ```
-#### Simple code
+
+
+#### Example
 
 ```python
 import time
@@ -32,5 +46,14 @@ else:
 pnbio.close()
 ```
 
-PS: Need change BOOSTPYTHON_VERSION in the setup.py to your version Python.
+Need change BOOSTPYTHON_VERSION in the setup.py to your version Python.
+
+
+# Message: 'required key not available'
+I had a problem loading kernel module and the following message appeared: 
+'required key not available'. I used mokutil to disable safe boot mode.
+
+```bash
+$ sudo mokutil --disable-validation
+```
 
