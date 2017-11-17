@@ -1,10 +1,9 @@
-# NBioBSP Module for Python
+# Nitgen Hamster III Module for Python
 
 Digital fingerprint reader module for Python using Nitgen device.
 Install the driver that is the "driver" directory.
 
 ## Acknowledgments
-
 
 Agradeço a [Fingertech](http://www.fingertech.com.br) por todo apoio, suporte e investimento, 
 sem essa parceria não seria possível manter esse projeto.
@@ -30,7 +29,6 @@ $ sudo ./install.sh
 
 ```
 
-
 ## Install Python Module
 
 Need change BOOSTPYTHON_VERSION in the setup.py to your version Python. 
@@ -44,7 +42,9 @@ $ python setup.py install
 
 ```
 
-### Example
+## Example
+
+Simple example who capture two fingerprints and validate.
 
 ```python
 import time
@@ -69,6 +69,7 @@ pnbio.close()
 
 
 ## Message: 'required key not available'
+
 I had a problem loading kernel module and the following message appeared: 
 'required key not available'. I used mokutil to disable safe boot mode.
 
