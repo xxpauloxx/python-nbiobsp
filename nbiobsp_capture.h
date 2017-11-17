@@ -1,4 +1,3 @@
-
 // Método para capturar a impressão digital e retornar um FIR.
 string pynbiobspCapture(int timeout){
     NBioAPI_FIR_HANDLE firHandle;

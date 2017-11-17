@@ -1,4 +1,3 @@
-
 // Método para inicializar o dispositivo de leitura de impressão digital.
 bool pynbiobspInit(){
     if ( NBioAPI_Init(&bspHandle) != NBioAPIERROR_NONE ){

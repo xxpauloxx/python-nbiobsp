@@ -14,17 +14,33 @@ Thanks to [Fingertech] (http://www.fingertech.com.br) for all support and invest
 without this partnership it would not be possible to maintain this project.
 
 
+### Install driver
+
+```bash
+
+$ sudo apt-get install g++ gcc linux-headers build-essential make
+$ git clone https://github.com/paulopinda/python-nbiobsp.git
+$ cd python-nbiobsp
+$ cd driver
+$ sudo cp libNBioBSP.so NBioBSP.lic /lib
+$ tar -xzvf <ngstardrv-v1.0.5-1-Ubuntu14.04-32bit-2015.03.18.tgz> or <ngstardrv-v1.0.5-2-Ubuntu14.04-64bit-2015.03.30.tgz>
+$ cd <ngstardrv-v1.0.5-1-Ubuntu14.04-32bit> or <ngstardrv-v1.0.5-2-Ubuntu14.04-64bit>
+$ ./CreateModule
+$ sudo ./install.sh
+
+```
+
+
 ### Install Python module
 
 ```bash
 
-git clone https://github.com/paulopinda/python-nbiobsp.git
-cd python-nbiobsp
-python setup.py build
-python setup.py install
+$ git clone https://github.com/paulopinda/python-nbiobsp.git
+$ cd python-nbiobsp
+$ python setup.py build
+$ python setup.py install
 
 ```
-
 
 #### Example
 
@@ -60,3 +76,7 @@ I had a problem loading kernel module and the following message appeared:
 $ sudo mokutil --disable-validation
 ```
 
+
+# Contribute
+
+If anything is missing from the code or the README.md documentation, please send me a PULL REQUEST.

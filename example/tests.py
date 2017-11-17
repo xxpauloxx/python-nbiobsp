@@ -1,6 +1,7 @@
 
-import time 
+import time
 import pynbiobsp as pnbio
+
 pnbio.init()
 
 print('Posicione a primeira digital: ')
