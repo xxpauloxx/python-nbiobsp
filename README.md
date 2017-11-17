@@ -18,7 +18,7 @@ without this partnership it would not be possible to maintain this project.
 
 ```bash
 
-$ sudo apt-get install g++ gcc linux-headers build-essential make
+$ sudo apt-get install g++ gcc linux-headers build-essential make  python-dev autotools-dev libicu-dev libbz2-dev libboost-all-dev libboost-python-dev 
 $ git clone https://github.com/paulopinda/python-nbiobsp.git
 $ cd python-nbiobsp
 $ cd driver
@@ -32,6 +32,8 @@ $ sudo ./install.sh
 
 
 ### Install Python module
+
+Need change BOOSTPYTHON_VERSION in the setup.py to your version Python. 
 
 ```bash
 
@@ -64,8 +66,6 @@ else:
 
 pnbio.close()
 ```
-
-Need change BOOSTPYTHON_VERSION in the setup.py to your version Python.
 
 
 # Message: 'required key not available'
