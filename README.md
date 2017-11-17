@@ -14,7 +14,7 @@ Thanks to [Fingertech](http://www.fingertech.com.br) for all support and investm
 without this partnership it would not be possible to maintain this project.
 
 
-### Install driver
+## Install Nitgen Hamster driver
 
 ```bash
 
@@ -31,7 +31,7 @@ $ sudo ./install.sh
 ```
 
 
-### Install Python module
+## Install Python Module
 
 Need change BOOSTPYTHON_VERSION in the setup.py to your version Python. 
 
@@ -44,7 +44,7 @@ $ python setup.py install
 
 ```
 
-#### Example
+### Example
 
 ```python
 import time
@@ -68,7 +68,7 @@ pnbio.close()
 ```
 
 
-# Message: 'required key not available'
+## Message: 'required key not available'
 I had a problem loading kernel module and the following message appeared: 
 'required key not available'. I used mokutil to disable safe boot mode.
 
@@ -77,6 +77,6 @@ $ sudo mokutil --disable-validation
 ```
 
 
-# Contribute
+## Contribute
 
 If anything is missing from the code or the README.md documentation, please send me a PULL REQUEST.
