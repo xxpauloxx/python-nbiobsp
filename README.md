@@ -10,7 +10,7 @@ Agradeço a [Fingertech](http://www.fingertech.com.br) por todo apoio, suporte e
 sem essa parceria não seria possível manter esse projeto.
 <br />
 
-Thanks to [Fingertech] (http://www.fingertech.com.br) for all support and investment,
+Thanks to [Fingertech](http://www.fingertech.com.br) for all support and investment,
 without this partnership it would not be possible to maintain this project.
 
 
