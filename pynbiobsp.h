@@ -8,8 +8,7 @@
 
 using namespace std;
 
-// Definindo as variáveis globais que serão usadas 
-// pela aplicação.
+// Defining the global variables that will be used by the application.
 NBioAPI_HANDLE bspHandle;
 NBioAPI_DEVICE_ID idDevice;
 NBioAPI_RETURN ret;

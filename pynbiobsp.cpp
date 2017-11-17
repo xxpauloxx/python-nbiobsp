@@ -6,7 +6,7 @@
 
 using namespace boost::python;
 
-// Registrando os métodos do módulo.
+// Registering the module methods.
 BOOST_PYTHON_MODULE(pynbiobsp)
 {
     def("init", pynbiobspInit);
