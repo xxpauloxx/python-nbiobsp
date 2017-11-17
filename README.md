@@ -22,7 +22,7 @@ $ git clone https://github.com/paulopinda/python-nbiobsp.git
 $ cd python-nbiobsp
 $ cd driver
 $ sudo cp NBioBSP.lic /lib
-$ sudo cp <libs/linux_x86_x64/libNBioBSP.so or libs/linux_x86/libNBioBSP.so>
+$ sudo cp <libs/linux_x86_x64/libNBioBSP.so or libs/linux_x86/libNBioBSP.so> /lib
 $ cd hamster-iii
 $ tar -xzvf <ngstardrv-v1.0.5-1-Ubuntu14.04-32bit-2015.03.18.tgz> or <ngstardrv-v1.0.5-2-Ubuntu14.04-64bit-2015.03.30.tgz>
 $ cd <ngstardrv-v1.0.5-1-Ubuntu14.04-32bit> or <ngstardrv-v1.0.5-2-Ubuntu14.04-64bit>
