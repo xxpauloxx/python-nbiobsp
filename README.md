@@ -17,17 +17,31 @@ without this partnership it would not be possible to maintain this project.
 
 ```bash
 
-$ sudo apt-get install g++ gcc linux-headers build-essential make  python-dev autotools-dev libicu-dev libbz2-dev libboost-all-dev libboost-python-dev 
+$ sudo apt-get install g++ gcc linux-headers build-essential make  python-dev autotools-dev libicu-dev libbz2-dev libboost-all-dev libboost-python-dev
 $ git clone https://github.com/paulopinda/python-nbiobsp.git
 $ cd python-nbiobsp
 $ cd driver
-$ sudo cp libNBioBSP.so NBioBSP.lic /lib
+$ sudo cp NBioBSP.lic /lib
+$ sudo cp <libs/linux_x86_x64/libNBioBSP.so or libs/linux_x86/libNBioBSP.so>
+$ cd hamster-iii
 $ tar -xzvf <ngstardrv-v1.0.5-1-Ubuntu14.04-32bit-2015.03.18.tgz> or <ngstardrv-v1.0.5-2-Ubuntu14.04-64bit-2015.03.30.tgz>
 $ cd <ngstardrv-v1.0.5-1-Ubuntu14.04-32bit> or <ngstardrv-v1.0.5-2-Ubuntu14.04-64bit>
 $ ./CreateModule
 $ sudo ./install.sh
 
 ```
+
+## Message: 'required key not available'
+
+I had a problem loading kernel module and the following message appeared: 
+'required key not available'. I used mokutil to disable secure boot mode.
+
+```bash
+$ sudo mokutil --disable-validation
+```
+
+Reboot and change boot state.
+
 
 ## Install Python Module
 
@@ -66,17 +80,6 @@ else:
 
 pnbio.close()
 ```
-
-
-## Message: 'required key not available'
-
-I had a problem loading kernel module and the following message appeared: 
-'required key not available'. I used mokutil to disable safe boot mode.
-
-```bash
-$ sudo mokutil --disable-validation
-```
-
 
 ## Contribute
 
