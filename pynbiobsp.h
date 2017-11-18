@@ -6,9 +6,8 @@
 #include "include/NBioAPI_Export.h"
 #include "include/NBioAPI_IndexSearch.h"
 
-using namespace std;
-
-// Defining the global variables that will be used by the application.
+// Defining the global variables that will be 
+// used by the application.
 NBioAPI_HANDLE bspHandle;
 NBioAPI_DEVICE_ID idDevice;
 NBioAPI_RETURN ret;

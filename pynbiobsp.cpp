@@ -9,8 +9,8 @@ using namespace boost::python;
 // Registering the module methods.
 BOOST_PYTHON_MODULE(pynbiobsp)
 {
-    def("init", pynbiobspInit);
-    def("capture", pynbiobspCapture);
-    def("match", pynbiobspMatch);
-    def("close", pynbiobspClose);
+    def("init", nbiobspInit);
+    def("capture", nbiobspCapture);
+    def("match", nbiobspMatch);
+    def("close", nbiobspClose);
 }

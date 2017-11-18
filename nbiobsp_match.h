@@ -1,5 +1,5 @@
 // Method for carrying out comparisons of FIR templates.
-bool pynbiobspMatch(string firCaptured, string firStored){
+bool nbiobspMatch(std::string firCaptured, std::string firStored){
     NBioAPI_BOOL result;
     NBioAPI_INPUT_FIR inputFirCaptured, inputFirStored;
 
@@ -40,6 +40,11 @@ bool pynbiobspMatch(string firCaptured, string firStored){
         NULL    			// Payload.
     );
 
-    if(result == NBioAPI_TRUE){ return true; }
-    else{ return false; }
+    if(ret != NBioAPIERROR_NONE) {
+        std::cout << "Problem in NBioAPI_VerifyMatch." << std::endl;
+        return false;
+    }
+
+    if(result == NBioAPI_TRUE) return true;
+    else return false;
 }

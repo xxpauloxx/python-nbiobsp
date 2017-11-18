@@ -1,22 +1,27 @@
 //  Method to capture the fingerprint and return a FIR.
-string pynbiobspCapture(int timeout){
+std::string nbiobspCapture(int timeout){
     NBioAPI_FIR_HANDLE firHandle;
-    NBioAPI_FIR_PURPOSE purpose;
 
-    purpose = NBioAPI_FIR_PURPOSE_ENROLL;
     ret = NBioAPI_Capture(
         bspHandle,   // Module for handling NBioBSP module.
-        purpose,
+        NBioAPI_FIR_PURPOSE_ENROLL,
         &firHandle,  // Capture the FIR and put in the variable.
         timeout,     // Capture timeout.
         NULL,
         NULL
     );
 
+    if(ret != NBioAPIERROR_NONE)
+        return "ERROR: Problem in NBioAPI Capture.";
+
     // Capture the digital FIR and return the hash of the template.
     NBioAPI_FIR_TEXTENCODE textFIR;
-    ret = NBioAPI_GetTextFIRFromHandle(bspHandle, firHandle, &textFIR, NBioAPI_FALSE);
+    ret = NBioAPI_GetTextFIRFromHandle(
+        bspHandle, firHandle, &textFIR, NBioAPI_FALSE);
+    
+    if(ret != NBioAPIERROR_NONE)
+        return "ERROR: Problem in NBioAPI get Text FIR from Handle.";
 
-    if(ret == 0) return textFIR.TextFIR;
+    if(ret == NBioAPIERROR_NONE) return textFIR.TextFIR;
     else return "NULL";
 }
