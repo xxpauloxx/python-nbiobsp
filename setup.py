@@ -5,10 +5,10 @@ import os
 import sys
 import setuptools
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = os.path.dirname(os.path.abspath(__file__)) 
 print(BASE_DIR)
 
-__version__ = '0.0.1'
+__version__ = '0.0.2'
 
 
 class get_pybind_include(object):
@@ -29,7 +29,7 @@ class get_pybind_include(object):
 ext_modules = [
     Extension(
         'pynbiobsp',
-        ['src/main.cpp'],
+        [BASE_DIR + '/src/main.cpp'],
         include_dirs=[
             get_pybind_include(),
             get_pybind_include(user=True),
