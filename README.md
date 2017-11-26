@@ -47,7 +47,10 @@ Reboot and change boot state.
 
 ```bash
 
-$ pip install pynbiobsp
+$ git clone https://github.com/paulopinda/python-nbiobsp.git
+$ cd python-nbiobsp
+$ pip install pybind11
+$ python setup.py build install
 
 ```
 
