@@ -5,10 +5,6 @@ Install the driver that is the "driver" directory.
 
 ## Acknowledgments
 
-Agradeço a [Fingertech](http://www.fingertech.com.br) por todo apoio, suporte e investimento, 
-sem essa parceria não seria possível manter esse projeto.
-<br />
-
 Thanks to [Fingertech](http://www.fingertech.com.br) for all support and investment,
 without this partnership it would not be possible to maintain this project.
 
@@ -17,15 +13,19 @@ without this partnership it would not be possible to maintain this project.
 
 ```bash
 
-$ sudo apt-get install g++ gcc linux-headers build-essential make  python-dev autotools-dev libicu-dev libbz2-dev libboost-all-dev libboost-python-dev
+$ sudo apt-get install g++ gcc linux-headers build-essential make  python-dev autotools-dev libicu-dev libbz2-dev
 $ git clone https://github.com/paulopinda/python-nbiobsp.git
 $ cd python-nbiobsp
-$ cd driver
+$ cd utils/libs
+
+$ # Install libs
 $ sudo cp NBioBSP.lic /lib
-$ sudo cp <libs/linux_x86_x64/libNBioBSP.so or libs/linux_x86/libNBioBSP.so> /lib
+$ sudo cp libs/linux_<x86_x64/x86>/libNBioBSP.so /lib
+
+$ # Install driver
 $ cd hamster-iii
-$ tar -xzvf <ngstardrv-v1.0.5-1-Ubuntu14.04-32bit-2015.03.18.tgz> or <ngstardrv-v1.0.5-2-Ubuntu14.04-64bit-2015.03.30.tgz>
-$ cd <ngstardrv-v1.0.5-1-Ubuntu14.04-32bit> or <ngstardrv-v1.0.5-2-Ubuntu14.04-64bit>
+$ tar -xzvf ngstardrv-...# choose 32 or 64bits
+$ cd ngstardrv-...
 $ ./CreateModule
 $ sudo ./install.sh
 
@@ -45,14 +45,9 @@ Reboot and change boot state.
 
 ## Install Python Module
 
-Need change BOOSTPYTHON_VERSION in the setup.py to your version Python. 
-
 ```bash
 
-$ git clone https://github.com/paulopinda/python-nbiobsp.git
-$ cd python-nbiobsp
-$ python setup.py build
-$ python setup.py install
+$ pip install pynbiobsp
 
 ```
 
