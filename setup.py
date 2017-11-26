@@ -1,8 +1,12 @@
 from setuptools import setup, Extension
 from setuptools.command.build_ext import build_ext
 
+import os
 import sys
 import setuptools
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+print(BASE_DIR)
 
 __version__ = '0.0.1'
 
@@ -29,7 +33,7 @@ ext_modules = [
         include_dirs=[
             get_pybind_include(),
             get_pybind_include(user=True),
-            './include/'
+            BASE_DIR + '/include/'
         ],
         libraries=['NBioBSP'],
         language='c++'
