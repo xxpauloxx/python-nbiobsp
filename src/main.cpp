@@ -12,7 +12,7 @@ NBioAPI_RETURN nbioApiReturn;
 // Initialize the device.
 bool NBioBSP_Init() {
     if (NBioAPI_Init(&nbioApiHandle) != NBioAPIERROR_NONE) {
-        std::cout << "Initialization failed." << std::endl;
+        std::cout << "ERROR: Initialization failed." << std::endl;
         return false;
     }
 
@@ -20,7 +20,7 @@ bool NBioBSP_Init() {
     nbioApiReturn = NBioAPI_OpenDevice(nbioApiHandle, nbioApiDeviceId);
 
     if (nbioApiReturn != NBioAPIERROR_NONE) {
-        std::cout << "Unable to connect to device." << std::endl;
+        std::cout << "ERROR: Unable to connect to device." << std::endl;
         return false;
     }
 
@@ -31,11 +31,11 @@ bool NBioBSP_Init() {
 void NBioBSP_Close(){
     nbioApiReturn = NBioAPI_CloseDevice(nbioApiHandle, nbioApiDeviceId);
     if (nbioApiReturn != NBioAPIERROR_NONE) 
-        std::cout << "Problem to close device." << std::endl;
+        std::cout << "ERROR: Problem to close device." << std::endl;
 
     nbioApiReturn = NBioAPI_Terminate(nbioApiHandle);
     if (nbioApiReturn != NBioAPIERROR_NONE) 
-        std::cout << "Problem to terminate NBioBSP handle." << std::endl;
+        std::cout << "ERROR: Problem to terminate NBioBSP handle." << std::endl;
 }
 
 //  Method to capture the fingerprint and return a FIR.
@@ -51,8 +51,22 @@ std::string NBioBSP_Capture(int timeout){
         NULL
     );
 
-    if(nbioApiReturn != NBioAPIERROR_NONE)
-        return "ERROR: Problem in NBioAPI Capture.";
+    if (nbioApiReturn != NBioAPIERROR_NONE) {
+        switch (nbioApiReturn) {
+            case NBioAPIERROR_INVALID_HANDLE:
+                return "ERROR: Invalid handle";
+            case NBioAPIERROR_INVALID_POINTER:
+                return "ERROR: Invalid pointer";
+            case NBioAPIERROR_ENCRYPTED_DATA_ERROR:
+                return "ERROR: Encrypted data error";
+            case NBioAPIERROR_INTERNAL_CHECKSUM_FAIL:
+                return "ERROR: Checksum fail";
+            case NBioAPIERROR_MUST_BE_PROCESSED_DATA:
+                return "ERROR: Must be processed data";
+            default:
+                return "ERROR: Unknown error";
+        }
+    }
 
     // Capture the digital FIR and return the hash of the template.
     NBioAPI_FIR_TEXTENCODE textFIR;
@@ -109,7 +123,7 @@ bool NBioBSP_Match(std::string firCaptured, std::string firStored){
     );
 
     if (nbioApiReturn != NBioAPIERROR_NONE) {
-        std::cout << "Problem in NBioAPI_VerifyMatch." << std::endl;
+        std::cout << "ERROR: Problem in NBioAPI verify match." << std::endl;
         return false;
     }
 
@@ -121,6 +135,6 @@ PYBIND11_MODULE(pynbiobsp, module) {
     module.doc() = "NBioBSP module for Python to device Nitgen Hamster III";
     module.def("init", &NBioBSP_Init, "Initialize the device");
     module.def("close", &NBioBSP_Close, "Close the device");
-    module.def("capture", &NBioBSP_Capture, "Capture fingerprint");
-    module.def("match", &NBioBSP_Match, "Compare fingerprints");
+    module.def("capture", &NBioBSP_Capture, "Capture FIR template from fingerprint.");
+    module.def("match", &NBioBSP_Match, "Match two FIRs template.");
 }
