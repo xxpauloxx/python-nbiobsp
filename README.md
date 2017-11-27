@@ -47,6 +47,7 @@ Reboot and change boot state.
 ```bash
 
 $ pip install pynbiobsp
+$ test_fingerprint.py # for tests.
 
 ```
 
