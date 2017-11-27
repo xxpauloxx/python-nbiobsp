@@ -103,4 +103,8 @@ setup(
     zip_safe=False,
     packages=['src', 'include'],
     scripts=[BASE_DIR + '/scripts/test_fingerprint.py',],
+    classifiers=[
+        'License :: OSI Approved :: GNU General Public License v2 (GPLv2)',
+        'Topic :: Software Development :: Libraries :: Python Modules'
+    ]
 )
