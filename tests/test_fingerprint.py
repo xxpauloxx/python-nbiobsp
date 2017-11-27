@@ -1,4 +1,7 @@
+#!/usr/bin/env python
+
 import time
+
 import pynbiobsp as pnbio
 pnbio.init()
 
