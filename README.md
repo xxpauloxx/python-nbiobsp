@@ -1,3 +1,5 @@
+[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=7EEF7MTNVWTS8)
+
 # Nitgen Hamster III Module for Python 2.7.x and 3.x
 
 Digital fingerprint reader module for Python using Nitgen device.
