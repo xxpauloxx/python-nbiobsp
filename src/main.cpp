@@ -29,8 +29,13 @@ bool NBioBSP_Init() {
 
 // Method to end device usage and free up memory.
 void NBioBSP_Close(){
-	NBioAPI_CloseDevice(nbioApiHandle, nbioApiDeviceId);
-	NBioAPI_Terminate(nbioApiHandle);
+	nbioApiReturn = NBioAPI_CloseDevice(nbioApiHandle, nbioApiDeviceId);
+    if (nbioApiReturn != NBioAPIERROR_NONE) 
+        std::cout << "Problem to close device." << std::endl;
+
+	nbioApiReturn = NBioAPI_Terminate(nbioApiHandle);
+    if (nbioApiReturn != NBioAPIERROR_NONE) 
+        std::cout << "Problem to terminate NBioBSP handle." << std::endl;
 }
 
 //  Method to capture the fingerprint and return a FIR.
