@@ -1,4 +1,4 @@
-# Nitgen Hamster III Module for Python
+# Nitgen Hamster III Module for Python 2.7.x and 3.x
 
 Digital fingerprint reader module for Python using Nitgen device.
 Install the driver that is the "driver" directory.
@@ -42,8 +42,15 @@ $ sudo mokutil --disable-validation
 
 Reboot and change boot state.
 
+## Install from Pypi
 
-## Install Python Module
+```bash
+
+$ pip install pynbiobsp
+
+```
+
+## Install from Github
 
 ```bash
 
