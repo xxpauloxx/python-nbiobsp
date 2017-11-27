@@ -8,7 +8,7 @@ import setuptools
 BASE_DIR = os.path.dirname(os.path.abspath(__file__)) 
 print(BASE_DIR)
 
-__version__ = '0.0.8'
+__version__ = '0.0.9'
 
 
 class get_pybind_include(object):
@@ -102,5 +102,5 @@ setup(
     cmdclass={'build_ext': BuildExt},
     zip_safe=False,
     packages=['src', 'include'],
-    scripts=[BASE_DIR + '/tests/test_fingerprint.py',],
+    scripts=[BASE_DIR + '/scripts/test_fingerprint.py',],
 )
